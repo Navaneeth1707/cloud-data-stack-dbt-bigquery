@@ -39,3 +39,21 @@ models:
           - accepted_values:
               arguments:
                 values: ['delivered']
+
+  - name: fct_order_items
+    description: "One row per order item, delivered orders only"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_orders')
+                field: order_id
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_id

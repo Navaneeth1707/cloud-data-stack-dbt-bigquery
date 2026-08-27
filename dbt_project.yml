@@ -14,7 +14,7 @@ snapshot-paths: ["snapshots"]
 target-path: "target"
 clean-targets:
   - "target"
-  - "dbt_packages"
+  - "dbt-modules"
 
 models:
   cloud_data_stack_olist:
